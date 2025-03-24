@@ -3,6 +3,52 @@
 ## 📌 Project Overview
 This project predicts future flight landing counts using historical flight landing data. The goal is to analyze trends, detect anomalies, and forecast landings for the next two years using AI/ML models.
 
+erDiagram
+    FACT_AIRLINE_TRAFFIC {
+        STRING Operating_Airline
+        STRING Operating_Airline_IATA_Code
+        STRING Aircraft_Model
+        STRING Aircraft_Body_Type
+        STRING Aircraft_Manufacturer
+        STRING GEO_Summary
+        STRING GEO_Region
+        INT Activity_Period
+        DATE Activity_Period_Start_Date
+        INT Landing_Count
+        INT Total_Landed_Weight
+    }
+
+    DIM_AIRLINE {
+        STRING Operating_Airline
+        STRING Operating_Airline_IATA_Code
+    }
+    
+    DIM_AIRCRAFT {
+        STRING Aircraft_Model
+        STRING Aircraft_Body_Type
+        STRING Aircraft_Manufacturer
+    }
+    
+    DIM_REGION {
+        STRING GEO_Summary
+        STRING GEO_Region
+    }
+    
+    DIM_DATE {
+        DATE FULL_DATE
+        INT YEAR
+        INT MONTH
+        INT DAY
+        INT WEEKDAY
+        INT QUARTER
+    }
+
+    FACT_AIRLINE_TRAFFIC ||--o{ DIM_AIRLINE : "references"
+    FACT_AIRLINE_TRAFFIC ||--o{ DIM_AIRCRAFT : "references"
+    FACT_AIRLINE_TRAFFIC ||--o{ DIM_REGION : "references"
+    FACT_AIRLINE_TRAFFIC ||--o{ DIM_DATE : "references"
+
+
 ## 🔍 Features
 - **Data Processing:** Cleans and prepares historical flight landing data.
 - **Trend Analysis:** Identifies seasonality, anomalies, and growth patterns.
