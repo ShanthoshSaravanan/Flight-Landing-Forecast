@@ -1,0 +1,15 @@
+--I Have used databricks and placed the files in AWS-S3( you can use google collab, with your local storage as well for free)
+
+✅ 1_data_analysis.ipynb
+- Loads dataset
+- Exploratory Data Analysis (EDA)
+- Data Cleaning & Preprocessing
+
+✅ 2_forecasting.ipynb
+- Time Series Forecasting
+- Linear Regression Predictions
+- Model Evaluation
+
+✅ 3_llm_insights.ipynb
+- AI-Powered Insights using LLMs
+- Seasonality & Trend Analysis
